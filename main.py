@@ -808,13 +808,13 @@ class check_update ():
 
                     os.system("chmod +x "+home+"/linlog_"+version+"/linlog")
                     with open(home+"/linlog/linlog", "w") as f:
-                       string_to_file = ['#! /bin/bash\n', 'cd '+home+'/linlog_'+version+'\n', 'python main.py\n']
+                       string_to_file = ['#! /bin/bash\n', 'cd '+home+'/linlog_'+version+'\n', 'python3 main.py\n']
                        f.writelines(string_to_file)
 
                     #delete backup dir
                     os.system("rm -rf " + home + "/linuxlog-backup")
 
-                    os.system("rm -rf " + home + "/linlog_v"+self.version)
+                    os.system("rm -rf " + home + "/linlog_"+self.version)
 
                     std.std.message(self.parrent, "Update to v."+version+" \nCOMPLITED \n "
                                                                          "Please restart LinuxLog", "UPDATER")
